@@ -1,0 +1,11 @@
+.btn {
+  height: 40px;
+  width: 95px;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px gray;
+  transition: all 1s ease;
+  &:hover {
+    background-color: #cff3ee;
+    box-shadow: inset 0 0 1px 1px gray;
+  }
+}

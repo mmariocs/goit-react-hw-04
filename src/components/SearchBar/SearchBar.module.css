@@ -1,0 +1,37 @@
+.header {
+  background-color: #73f1dc;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+  transition: background-color 1s ease;
+  &:hover {
+    background-color: #b3f5ea;
+  }
+}
+
+.input {
+  margin-right: 10px;
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  &:focus {
+    border-style: none;
+  }
+}
+
+.btn {
+  height: 40px;
+  width: 65px;
+  border-color: aliceblue;
+  border-radius: 5px;
+  box-shadow: 0 0 1px 1px gray;
+  transition: all 1s ease;
+  &:hover {
+    background-color: #cff3ee;
+    box-shadow: inset 0 0 1px 1px gray;
+  }
+}
