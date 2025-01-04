@@ -1,11 +1,36 @@
-#root {
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
-  text-align: center;
+}
+
+p:last-child {
+  margin-bottom: 0;
 }
 
 ul {
-  list-style-type: none;
-}
-body {
   margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.header {
+  margin-left: auto;
+  margin-right: auto;
+  width: 280px;
 }

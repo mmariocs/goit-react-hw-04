@@ -1,9 +1,17 @@
-import React from "react";
 import s from "./LoadMoreBtn.module.css";
-const LoadMoreBtn = ({ onClick }) => (
-  <button className={s.btn} onClick={onClick}>
-    Load more
-  </button>
-);
+
+const LoadMoreBtn = ({ handleChangePage }) => {
+  return (
+    <div className={s.loadMoreWrapper}>
+      <button
+        onClick={handleChangePage}
+        type="button"
+        className={s.loadMoreBtn}
+      >
+        Show more
+      </button>
+    </div>
+  );
+};
 
 export default LoadMoreBtn;

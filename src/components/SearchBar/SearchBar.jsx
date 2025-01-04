@@ -1,33 +1,34 @@
-import { useState } from "react";
 import toast from "react-hot-toast";
 import s from "./SearchBar.module.css";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
-const SearchBar = ({ onSubmit }) => {
-  const [input, setInput] = useState("");
-  const handleChange = (event) => {
-    setInput(event.target.value);
-  };
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (input.trim() === "") {
-      toast.error("Please enter a search term.");
+const SearchBar = ({ handleSearch }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const searchValue = form.elements.searchValue.value;
+    if (form.elements.searchValue.value.trim() === "") {
+      toast.error("Please write input value!");
       return;
     }
-    onSubmit(input);
-    setInput("");
+    handleSearch(searchValue);
+    form.reset();
   };
+
   return (
     <header className={s.header}>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={s.searchForm}>
         <input
+          className={s.search}
+          name="searchValue"
           type="text"
-          value={input}
-          onChange={handleChange}
+          autoComplete="off"
+          autoFocus
           placeholder="Search images and photos"
-          className={s.input}
         />
-        <button type="submit" className={s.btn}>
-          Search
+        <button type="submit" className={s.searchBtn}>
+          <hr className={s.line} />
+          <FaMagnifyingGlass className={s.searchIcon} />
         </button>
       </form>
     </header>

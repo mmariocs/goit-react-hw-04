@@ -1,19 +1,19 @@
-import React from "react";
 import ImageCard from "../ImageCard/ImageCard";
 import s from "./ImageGallery.module.css";
-const ImageGallery = ({ images, onImageClick }) => {
+
+const ImageGallery = ({ images, openModal }) => {
   return (
-    <ul className={s.list}>
+    <ul className={s.galleryList}>
       {images.map((image) => (
         <li
-          className={s.item}
           key={image.id}
-          onClick={() => onImageClick(image.urls.regular)}
+          className={s.galleryItem}
+          onClick={() => openModal(image)}
+          id={image.id}
         >
-          <ImageCard image={image} onClick={onImageClick} />
+          <ImageCard image={image} />
         </li>
       ))}
-      ;
     </ul>
   );
 };

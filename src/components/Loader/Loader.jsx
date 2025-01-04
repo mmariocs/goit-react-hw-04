@@ -1,17 +1,17 @@
-import React from "react";
-import { Hourglass } from "react-loader-spinner";
+import { Hearts } from "react-loader-spinner";
+import s from "./Loader.module.css";
 
 const Loader = () => {
   return (
-    <div>
-      <Hourglass
-        visible={true}
-        height="40"
-        width="40"
-        ariaLabel="hourglass-loading"
+    <div className={s.loaderWrapper}>
+      <Hearts
+        height="80"
+        width="80"
+        color="#FFFFFF"
+        ariaLabel="hearts-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        colors={["#306cce", "#72a1ed"]}
+        visible={true}
       />
     </div>
   );

@@ -1,20 +1,19 @@
-import React from "react";
 import s from "./ImageModal.module.css";
-import Modal from "react-modal";
-Modal.setAppElement("#root");
+import { IoCloseOutline } from "react-icons/io5";
 
-const ImageModal = ({ imageUrl, onClose, isOpen }) => {
+const ImageModal = ({ closeModal, selectedImage }) => {
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      overlayClassName={s.overlay}
-      className={s.content}
-      shouldCloseOnOverlayClick={true}
-      shouldCloseOnEsc={true}
-    >
-      <img src={imageUrl} alt="Large view" className={s.img} />
-    </Modal>
+    <div className={s.modalWrapper}>
+      <button onClick={closeModal} className={s.modalCloseBtn}>
+        <IoCloseOutline className={s.modalIcon} />
+      </button>
+      <img
+        src={selectedImage.urls.regular}
+        alt={selectedImage.alt_description}
+        className={s.image}
+      />
+      <p className={s.imageDescription}>{selectedImage.alt_description}</p>
+    </div>
   );
 };
 
